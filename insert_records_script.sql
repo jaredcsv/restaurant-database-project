@@ -105,7 +105,7 @@ INSERT INTO product_has_material (product_id, material_id) VALUES
 (1, 2),
 (2, 3),
 (3, 4),
-(4, 5);
+(5, 5);
 
 -- 14. supplier
 INSERT INTO supplier (name, phone, email, address_id) VALUES
