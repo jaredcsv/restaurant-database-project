@@ -87,7 +87,7 @@ INSERT INTO category (name) VALUES
 INSERT INTO product (name, description, unit_price, stock, category_id) VALUES
 ('Caesar Salad', 'Fresh romaine lettuce with Caesar dressing', 12.99, 20, 5),
 ('Grilled Chicken Sandwich', 'Grilled chicken breast with lettuce and tomato', 14.99, 15, 2),
-('Tiramisu', 'Classic Italian dessert', 6.99, 25, 3),
+('Cheesecake', 'A dessert made with a soft fresh cheese, eggs, and sugar', 6.99, 25, 3),
 ('Fresh Lemonade', 'Freshly squeezed lemonade', 3.99, 30, 4),
 ('Bruschetta', 'Toasted bread topped with tomatoes and basil', 5.99, 10, 1);
 
