@@ -64,23 +64,25 @@ GROUP BY s.name;
 
 -- UPDATE TESTS
 
--- 1. Increase the price of 'Tiramisu' by 10% if the stock is below 10
-UPDATE product
-SET unit_price = unit_price * 1.10
-WHERE name = 'Tiramisu'
-AND stock < 10;
+-- 1. Update the stock of 'Tomatoes' if it is below 50
+UPDATE material
+SET stock = 100
+WHERE material.id = 1
+AND stock < 50;
 
--- 2 Update the email of the customer 'Carlos Fernandez'
+-- 2. Update the email of the customer 'Carlos Fernandez'
 UPDATE customer
 SET email = 'carlos.newemail@example.com'
-WHERE firstname = 'Carlos' AND lastname = 'Fernandez';
+WHERE id = 3;
 
--- 3 Update 'David' to be the Manager (role_id = 4)
-UPDATE employee
-SET role_id = 4
-WHERE name = 'David';
+-- 3. Increase the price of all products in the 'Desserts' category by 15%
+UPDATE product
+SET unit_price = unit_price * 1.15
+WHERE category_id = (
+    SELECT id FROM category WHERE id = 3
+);
 
--- 4  Update the stock of materials supplied by 'Gourmet Goods Co.' to be increased by 20%
+-- 4. Update the stock of materials supplied by 'Gourmet Goods Co.' to be increased by 20%
 UPDATE material
 SET stock = stock * 1.20
 WHERE id IN (
@@ -88,25 +90,7 @@ WHERE id IN (
     WHERE supplier_id = (SELECT id FROM supplier WHERE name = 'Gourmet Goods Co.')
 );
 
--- 5 Update the status of the 'Family gathering' reservation to 'Completed' (status_id = 3)
+-- 5. Update the status of the 'Family gathering' reservation to 'Completed' (status_id = 3)
 UPDATE reservation
 SET status_id = 3
-WHERE description = 'Family gathering';
-
--- DELETE TESTS
-
--- Delete customer 'Liam Brown'
-DELETE FROM customer
-WHERE firstname = 'Liam' AND lastname = 'Brown';
-
--- Delete employee 'Charlie'
-DELETE FROM employee
-WHERE name = 'Charlie';
-
--- Delete supplier 'Taste Buds Supply'
-DELETE FROM supplier
-WHERE name = 'Taste Buds Supply';
-
--- Delete product 'Caesar Salad'
-DELETE FROM product
-WHERE name = 'Caesar Salad';
+WHERE id = 3;
