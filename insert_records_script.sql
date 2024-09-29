@@ -1,4 +1,4 @@
--- 1. Tabla: address
+-- 1. address
 INSERT INTO address (country, city, street) VALUES
 ('USA', 'New York', '5th Avenue'),
 ('Canada', 'Toronto', 'Queen Street'),
@@ -11,7 +11,7 @@ INSERT INTO address (country, city, street) VALUES
 ('UK', 'London', 'Oxford Street'),
 ('Brazil', 'São Paulo', 'Avenida Paulista');
 
--- 2. Tabla: area
+-- 2. area
 INSERT INTO area (name) VALUES
 ('Kitchen'),
 ('Dining'),
@@ -19,7 +19,7 @@ INSERT INTO area (name) VALUES
 ('Office'),
 ('Storage');
 
--- 3. Tabla: role
+-- 3. role
 INSERT INTO role (name, area_id) VALUES
 ('Chef', 1),
 ('Waiter', 2),
@@ -27,7 +27,7 @@ INSERT INTO role (name, area_id) VALUES
 ('Manager', 4),
 ('Cleaner', 5);
 
--- 4. Tabla: customer
+-- 4. customer
 INSERT INTO customer (firstname, lastname, phone, email, address_id) VALUES
 ('John', 'Doe', '123-456-7890', 'john.doe@example.com', 1),
 ('Jane', 'Smith', '234-567-8901', 'jane.smith@example.com', 2),
@@ -35,7 +35,7 @@ INSERT INTO customer (firstname, lastname, phone, email, address_id) VALUES
 ('Maria', 'Gonzalez', '456-789-0123', 'maria.gonzalez@example.com', 4),
 ('Liam', 'Brown', '567-890-1234', 'liam.brown@example.com', 5);
 
--- 5. Tabla: employee
+-- 5. employee
 INSERT INTO employee (name, phone, email, role_id) VALUES
 ('Alice', '678-901-2345', 'alice@example.com', 1),
 ('Bob', '789-012-3456', 'bob@example.com', 2),
@@ -43,7 +43,7 @@ INSERT INTO employee (name, phone, email, role_id) VALUES
 ('David', '901-234-5678', 'david@example.com', 4),
 ('Eva', '012-345-6789', 'eva@example.com', 5);
 
--- 6. Tabla: status
+-- 6. status
 INSERT INTO status (value) VALUES
 ('Pending'),
 ('Confirmed'),
@@ -51,15 +51,15 @@ INSERT INTO status (value) VALUES
 ('Canceled'),
 ('In Progress');
 
--- 7. Tabla: customer_order
+-- 7. customer_order
 INSERT INTO customer_order (customer_id, employee_id, created_date, status_id, price) VALUES
-(1, 1, '2024-09-25', 2, 29.99),
-(2, 2, '2024-09-26', 2, 49.99),
-(3, 3, '2024-09-27', 1, 19.99),
-(4, 4, '2024-09-28', 1, 39.99),
-(5, 5, '2024-09-29', 3, 59.99);
+(1, 1, '2024-09-25', 2, 59.99),
+(2, 2, '2024-09-26', 2, 99.99),
+(3, 3, '2024-09-27', 1, 45.50),
+(4, 4, '2024-09-28', 1, 89.99),
+(5, 5, '2024-09-29', 3, 129.99);
 
--- 8. Tabla: restaurant_table
+-- 8. restaurant_table
 INSERT INTO restaurant_table (id) VALUES
 (1),
 (2),
@@ -67,7 +67,7 @@ INSERT INTO restaurant_table (id) VALUES
 (4),
 (5);
 
--- 9. Tabla: reservation
+-- 9. reservation
 INSERT INTO reservation (description, customer_ID, restaurant_table_id, status_id) VALUES
 ('Dinner reservation for two', 1, 1, 3),
 ('Business meeting', 2, 2, 3),
@@ -75,7 +75,7 @@ INSERT INTO reservation (description, customer_ID, restaurant_table_id, status_i
 ('Birthday party', 4, 4, 1),
 ('Anniversary celebration', 5, 5, 2);
 
--- 10. Tabla: category
+-- 10. category
 INSERT INTO category (name) VALUES
 ('Appetizers'),
 ('Main Course'),
@@ -83,23 +83,23 @@ INSERT INTO category (name) VALUES
 ('Beverages'),
 ('Salads');
 
--- 11. Tabla: product
+-- 11. product
 INSERT INTO product (name, description, unit_price, stock, category_id) VALUES
 ('Caesar Salad', 'Fresh romaine lettuce with Caesar dressing', 12.99, 20, 5),
-('Cheeseburger', 'Juicy beef burger with cheese', 14.99, 15, 2),
+('Grilled Chicken Sandwich', 'Grilled chicken breast with lettuce and tomato', 14.99, 15, 2),
 ('Tiramisu', 'Classic Italian dessert', 6.99, 25, 3),
-('Lemonade', 'Freshly squeezed lemonade', 3.99, 30, 4),
+('Fresh Lemonade', 'Freshly squeezed lemonade', 3.99, 30, 4),
 ('Bruschetta', 'Toasted bread topped with tomatoes and basil', 5.99, 10, 1);
 
--- 12. Tabla: material
+-- 12. material
 INSERT INTO material (name, stock) VALUES
 ('Tomatoes', 100),
 ('Lettuce', 150),
-('Beef', 80),
+('Chicken', 80),
 ('Cheese', 60),
-('Chicken', 90);
+('Bread', 90);
 
--- 13. Tabla: product_has_material
+-- 13. product_has_material
 INSERT INTO product_has_material (product_id, material_id) VALUES
 (1, 1),
 (1, 2),
@@ -107,7 +107,7 @@ INSERT INTO product_has_material (product_id, material_id) VALUES
 (3, 4),
 (4, 5);
 
--- 14. Tabla: supplier
+-- 14. supplier
 INSERT INTO supplier (name, phone, email, address_id) VALUES
 ('Gourmet Goods Co.', '111-222-3333', 'info@gourmetgoods.com', 6),
 ('Fresh Finds Inc.', '222-333-4444', 'contact@freshfinds.com', 7),
@@ -115,7 +115,7 @@ INSERT INTO supplier (name, phone, email, address_id) VALUES
 ('Taste Buds Supply', '444-555-6666', 'hello@tastebudssupply.com', 9),
 ('Harvest Haven', '555-666-7777', 'sales@harvesthaven.com', 10);
 
--- 15. Tabla: material_has_supplier
+-- 15. material_has_supplier
 INSERT INTO material_has_supplier (material_id, supplier_id) VALUES
 (1, 1),
 (2, 2),
@@ -123,44 +123,41 @@ INSERT INTO material_has_supplier (material_id, supplier_id) VALUES
 (4, 4),
 (5, 5);
 
--- 16. Tabla: supplier_order
+-- 16. supplier_order
 INSERT INTO supplier_order (price, created_date, employee_id, supplier_id, status_id) VALUES
 (150.00, '2024-09-20', 1, 1, 1),
 (250.00, '2024-09-21', 2, 2, 2),
-(100.00, '2024-09-22', 3, 3, 4),
-(300.00, '2024-09-23', 4, 4, 4),
-(200.00, '2024-09-24', 5, 5, 5);
+(200.00, '2024-09-22', 3, 3, 4),
+(350.00, '2024-09-23', 4, 4, 4),
+(300.00, '2024-09-24', 5, 5, 5);
 
--- 17. Tabla: supplier_order_has_material
+-- 17. supplier_order_has_material
 INSERT INTO supplier_order_has_material (supplier_order_id, material_id, quantity) VALUES
 (1, 1, 10),
 (2, 2, 20),
-(3, 3, 30),
+(3, 3, 15),
 (4, 4, 40),
-(5, 5, 50);
+(5, 5, 30);
 
--- 18. Tabla: customer_order_has_product
+-- 18. customer_order_has_product
 INSERT INTO customer_order_has_product (customer_order_id, product_id, quantity) VALUES
-(1, 1, 1),
-(2, 2, 2),
-(3, 3, 3),
+(1, 1, 2),
+(2, 2, 3),
+(3, 3, 1),
 (4, 4, 4),
 (5, 5, 5);
 
--- 19. Tabla: supplier_order_has_product
+-- 19. supplier_order_has_product
 INSERT INTO supplier_order_has_product (supplier_order_id, product_id, quantity) VALUES
-(1, 1, 5),
-(2, 2, 10),
-(3, 3, 15),
-(4, 4, 20),
-(5, 5, 25);
+(1, 1, 10),
+(2, 2, 15);
 
--- 20. Tabla: product_has_supplier
+-- 20. product_has_supplier
 INSERT INTO product_has_supplier (product_id, supplier_id) VALUES
 (1, 1),
 (2, 2);
 
--- 21. Tabla: report
+-- 21. report
 INSERT INTO report (file, employee_id) VALUES
 (NULL, 1),
 (NULL, 2),
