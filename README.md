@@ -49,7 +49,7 @@ The database consists of several tables that represent different entities within
     status_id INT (Foreign key to status)
     ```
 
-* `restaurant_table:` Holds information on the tables within the restaurant.
+* `restaurant_table:` Holds table's numbers as ids.
 
     ```id INT```
 
