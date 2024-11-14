@@ -155,6 +155,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_db`.`reservation` (
   `customer_ID` INT NOT NULL,
   `restaurant_table_id` INT NOT NULL,
   `status_id` INT NOT NULL,
+  `date` DATETIME NOT NULL,
   PRIMARY KEY (`id`, `customer_ID`, `restaurant_table_id`, `status_id`),
   INDEX `fk_reservation_customer1_idx` (`customer_ID` ASC) VISIBLE,
   INDEX `fk_reservation_restaurant_table1_idx` (`restaurant_table_id` ASC) VISIBLE,
@@ -175,7 +176,6 @@ CREATE TABLE IF NOT EXISTS `restaurant_db`.`reservation` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `restaurant_db`.`category`
