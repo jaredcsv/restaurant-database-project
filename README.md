@@ -44,6 +44,7 @@ The database consists of several tables that represent different entities within
 * `reservation:` Stores reservation details made by customers.
 
     ```id INT
+    date DATETIME
     description TEXT
     customer_id INT (Foreign key to customer)
     restaurant_table_id INT (Foreign key to restaurant_table)
