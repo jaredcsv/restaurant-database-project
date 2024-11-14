@@ -3,7 +3,8 @@
 #### Overview
 This database is designed to manage various aspects of a restaurant’s operations, including customers, orders, suppliers, products, materials, and reservations. It allows efficient tracking of inventory, orders, and staff assignments, facilitating the restaurant’s overall workflow and improving management capabilities.
 
-![restaurant_db_img](https://github.com/user-attachments/assets/1920a5ac-df48-4570-984a-e873a82258f9)
+![db_diagram](https://github.com/user-attachments/assets/2eaea6c0-d052-4f19-b2f0-ba8362aa773e)
+
 
 ## Database Structure
 
